@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{% block title %}Flasky{% endblock %}</title>
+    {{ bootstrap.load_css() }}
+  </head>
+  <body>
+    <main class="container py-4">
+      {# --- Flashed messages block (Example 4-7) --- #}
+      {% for message in get_flashed_messages() %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      {% endfor %}
+
+      {% block page_content %}{% endblock %}
+    </main>
+
+    {{ bootstrap.load_js() }}
+  </body>
+</html>
