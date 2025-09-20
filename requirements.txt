@@ -1,0 +1,6 @@
+Flask
+Bootstrap-Flask
+Flask-WTF
+WTForms
+email-validator
+gunicorn
