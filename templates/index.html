@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}Flasky - Home{% endblock %}
+{% block page_content %}
+  <h1 class="mb-3">Hello, World!</h1>
+  <p>The local date/time is {{ moment(current_time).format('LLL') }}.</p>
+  <p>That was {{ moment(current_time).fromNow(refresh=True) }}</p>
+{% endblock %}

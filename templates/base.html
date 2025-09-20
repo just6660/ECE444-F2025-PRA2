@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{% block title %}Flasky{% endblock %}</title>
+    {{ bootstrap.load_css() }}
+    {% block head %}{% endblock %}
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="{{ url_for('index') }}">Flasky</a>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Home</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page content -->
+    <main class="container py-4">
+      {% block page_content %}{% endblock %}
+    </main>
+
+    {{ bootstrap.load_js() }}
+    {% block scripts %}
+      {{ moment.include_moment() }}
+      {# Optional: localize Moment e.g. 'es' #}
+      {# {{ moment.locale('en') }} #}
+    {% endblock %}
+  </body>
+</html>
